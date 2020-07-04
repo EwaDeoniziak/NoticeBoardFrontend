@@ -1,0 +1,110 @@
+@import './../../../app/shared/variables.scss';
+.property{
+    padding: 20px;
+}
+.my-input{
+    width: 100%;
+    font-size: 13px;
+}
+.my-textarea{
+    height: 300px;
+}
+h1{
+    padding: 20px;
+    padding-bottom: 40px;
+    @media (max-width: 440px) {
+        font-size: 25px;
+    }
+}
+.add{
+    text-align: center;
+    margin-top: 40px;
+}
+p{
+    padding: 20px;
+    color: $dark-sky;
+    @media (max-width: 440px) {
+        font-size: 13px;
+    }
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+    li{
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        img{max-width: 200px;
+            height: auto;
+            max-height: 200px;
+            width: auto;
+            
+        }
+        .photo-container{
+            margin-top: 10px;
+            height: 200px;
+            text-align: center;
+            border: 1px solid $light_sky;
+            position: relative;
+          img{
+              max-height: 100%;
+              max-width: 100%;
+              position: absolute;  
+              top: 0;  
+              bottom: 0;  
+              left: 0;  
+              right: 0;  
+              margin: auto;
+          }
+          .remove-icon{
+              position: absolute;
+              z-index: 3;
+              top: 2px;
+              right: 2px;
+              &:hover{
+                  color: $lemon;
+                  cursor: pointer;
+              }
+          }
+        }
+        &:first-child{
+            .photo-container{
+            border: 7px solid $light-sky;
+            }
+        }
+    }
+    
+}button{
+        &.green-button{
+            @media (max-width: 310px) {
+                width: 80vw;
+                margin: 5vw;
+                height: 50px;
+                font-size: 10px;
+                letter-spacing: 0;
+                padding: 0;
+            }
+            
+        }
+    }
+    .categories-to-check{
+        display: flex;
+        flex-wrap: wrap;
+        .category-check{
+            display: block;
+            width: 170px;
+            padding: 20px;
+            font-size: 15px;
+            @media (max-width: 700px) {
+                font-size: 12px;
+            }
+            @media (max-width: 440px) {
+                font-size: 10px;
+                padding: 10px;
+            }
+        }
+    }
+    

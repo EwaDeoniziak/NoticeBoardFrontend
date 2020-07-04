@@ -1,0 +1,113 @@
+@import './../../shared/variables.scss';
+
+    
+    .content{
+        margin-top: 70px;
+        @media (max-width: 800px) {
+            margin-top: 50px;
+        }
+        @media (max-width: 660px) {
+            margin-top: 20px;
+        }
+    }
+   .wrapper{
+       display: grid;
+        //background: linear-gradient(to bottom, $dark_sky, $light_sky);
+        background-color: $light_sky;
+        margin: 3%;
+        padding-bottom: 10px;
+        grid-template-areas: 
+        "search location price-from price-to"
+        "radio-buttons radio-buttons radio-buttons radio-buttons";
+        @media (max-width:1125px) {
+            grid-template-areas: 
+            "search location" 
+            "price-from price-to"
+            "radio-buttons radio-buttons";
+        }
+        @media (max-width:600px) {
+            grid-template-areas: 
+            "search" 
+            "location" 
+            "price-from" 
+            "price-to"
+            "radio-buttons" 
+        }
+        .filter-input{
+            margin: 10px;
+            font-size: 13px;
+            @media (max-width:1125px) {
+                font-size: 10px;
+            }
+            @media (max-width:300px) {
+                font-size: 8px;
+                width: 80vw;
+                margin-bottom: 0;
+            }
+        }
+        .search{
+            grid-area: search;
+        }
+        .location{
+            grid-area: location;
+        }
+        .price-from{
+            grid-area: price-from;
+        }
+        .price-to{
+            grid-area: price-to;
+        }
+        .options{
+            display: flex;
+            grid-area: radio-buttons;
+            background-color: white;
+            padding: 2%;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 13px;
+            
+            mat-radio-button{
+                width: 100px;
+                margin-left: 30px;
+                margin-bottom: 10px;
+                @media (max-width:300px) {
+                    margin-left: 10px;
+                }
+            }
+            @media (max-width: 1125px) {
+                font-size: 10px;
+            }
+            @media (max-width:300px) {
+                font-size: 8px;
+                width: 78vw;
+                padding: 1vw;
+            }
+            .options-title{
+                margin:5px;
+                color: $dark_sky;
+                text-transform: uppercase;
+                font-weight: 600;
+                @media (max-width:300px) {
+                    display: none;
+                }
+            }
+        }
+    } 
+    .button-div{
+        margin: 3%;
+        margin-bottom: 20px;
+        @media (min-width:731px) {
+            display: none;
+        }
+    }
+    .pager{
+        margin: 3%;
+    }
+
+    .checked{
+        background-color: lighten($color: $sea, $amount: 5%);
+        border-radius: 10px;
+    }
+
+
+    

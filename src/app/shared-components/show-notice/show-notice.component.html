@@ -1,0 +1,72 @@
+ <main>
+    <div class="container" *ngIf="notice; else spinner">
+        <h1>{{notice.title}}</h1>
+       <p class="categories">
+           <span *ngIf="notice.categories; else noCategory">
+                <div>Kategoria: {{getCategoryRightName(notice.categories)}}</div>
+           </span>
+           <ng-template #noCategory>
+               Brak kategorii
+           </ng-template>
+         </p>
+         <div class="imgs-gallery" *ngIf="notice.imgs.length>0; else no_imgs">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+         </div>
+         <!-- <div class="imgs" *ngIf="notice.imgs.length>0; else no_imgs">
+            <div class="displayedImg">
+                <img  [src]="_DomSanitizer.bypassSecurityTrustUrl(displayedImg.path)">
+                <div class="arrow arrow_back" [ngClass]="{'not-visible': isFirstImg}" (click)="prevImg()">
+                    <mat-icon>arrow_back_ios</mat-icon>
+                </div>
+                <div class="arrow arrow_forward" [ngClass]="{'not-visible': isLastImg}" (click)="nextImg()">
+                    <mat-icon>arrow_forward_ios</mat-icon>
+                </div>
+            </div>
+            
+            
+            <div class="allImgs" *ngIf="notice.imgs.length>0">
+                <div class="smallImg" *ngFor="let path of notice.imgs; let i = index" (click)=changeDisplayedImg(path,i) [ngClass]="{'displayed': i===displayedImg.index}">
+                    <img [src]="_DomSanitizer.bypassSecurityTrustUrl(path)">
+                </div>
+                
+                
+            </div>
+        </div> -->
+        <ng-template #no_imgs></ng-template>
+        <div class="text">
+            <h2 class="price">Cena: {{notice.price}} zł</h2>
+            
+            <p>{{notice.description}}</p>
+
+            <h2 class="contact">
+                
+                Kontakt</h2>
+            <p class="space">
+                <span class="important">
+                    <mat-icon>mail</mat-icon>
+                    Adres e-mail: 
+                </span> 
+                {{notice.userId.login}}
+            </p>
+            <p class="space">
+                
+                <span class="important">
+                    <mat-icon>local_phone</mat-icon>
+                    Numer telefonu: </span> 
+                {{notice.userId.phoneNumber}}
+            </p>
+            <h2 class="contact">
+                
+                Lokalizacja: 
+                <span class="location">{{notice.location}}</span>
+                
+            </h2>
+        </div> 
+
+        <p class="date">Data wystawienia: {{notice.date | date}}</p>
+        
+    </div>
+    <ng-template #spinner>
+        <mat-spinner class="spinner" diameter="100"></mat-spinner>
+    </ng-template>
+</main>   
